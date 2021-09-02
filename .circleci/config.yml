@@ -56,6 +56,8 @@ common-steps:
     run:
       name: Tag and make source tarball
       command: |
+        cd ~/packaging/securedrop-debian-packaging
+        . .venv/bin/activate
         cd ~/project
         ./update_version.sh 1000.0  # Dummy version number, doesn't matter what we put here
         python3 setup.py sdist
